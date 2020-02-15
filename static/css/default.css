@@ -1,0 +1,51 @@
+/* main layout */
+body {
+  font-family: Sans-Serif;
+  background-color: white;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  border: 1;
+}
+
+figcaption {
+  text-align: center;
+}
+
+td {
+  padding: 2px !important;
+  padding-left: 5px !important;
+}
+
+a {
+  color: #158cba;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.external {
+  background: url(../images/external.png) center right no-repeat;
+  padding-right: 13px;
+}
+
+/* source codes */
+pre.sourceCode {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  padding: 9.5px;
+}
