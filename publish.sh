@@ -9,6 +9,8 @@ function trace() {
     $@
 }
 
+CF_DOMAIN="utdemir.com"
+
 # peer id of the machine hosting my website.
 trace ipfs swarm connect /ipfs/QmUhdP7YFYnBeJHXBMxgVhwLNbZ3uBW6288UJmN7Uxq7ky
 
@@ -35,4 +37,25 @@ for gw in "${gateways[@]}"; do
   echo "Found."
 done
 
-# TODO: Set DNS
+echo "Updating DNS."
+
+cf_api="https://api.cloudflare.com/client/v4"
+
+cf_zone="$(
+    curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -X GET \
+        "$cf_api/zones" \
+        | jq -r '.result[] | select(.name = "$CF_DOMAIN").id'
+)"
+cf_rec="$(
+    curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -X GET \
+    "$cf_api/zones/$cf_zone/dns_records?type=TXT&name=_dnslink.$CF_DOMAIN" \
+    | jq -r '.result[].id'
+)"
+
+curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -X PATCH \
+  -H 'Content-Type: application/json' \
+  "$cf_api/zones/$cf_zone/dns_records/$cf_rec" \
+  --data "{ \"content\": \"dnslink=/ipfs/$final_hash\" }" \
+  | jq -e '.success' >/dev/null
+
+echo "Done."
