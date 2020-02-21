@@ -117,6 +117,7 @@ linkchecker -o csv "$out/" 2>/dev/null \
   | ( grep -v '^#' | grep -v 'urlname' || true )
 
 echo "Saving _out."
+rm -rf _out
 mv -T "$out" _out
 
 echo "Done."
