@@ -37,6 +37,10 @@ for gw in "${gateways[@]}"; do
   echo "Found."
 done
 
+echo "Pinning on the home server"
+ssh utdemir.com \
+  ipfs pin add --progress /ipfs/QmPxeJChsMjM6LirwAgvZf5LDEWtS9hLVo3t3SpCSKanb8
+
 echo "Updating DNS."
 
 cf_api="https://api.cloudflare.com/client/v4"
