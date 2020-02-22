@@ -11,16 +11,17 @@ body {
   margin: 0 auto;
 }
 
+p {
+  text-align: justify;
+  text-justify: auto;
+}
+
 img {
   max-width: 100%;
 }
 
-figure {
-  border: 1;
-}
-
-figcaption {
-  text-align: center;
+figure figcaption {
+  display: none;
 }
 
 td {
@@ -43,6 +44,16 @@ a.external {
 }
 
 /* source codes */
+
+p code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+  white-space: nowrap;
+}
+
 pre.sourceCode {
   background-color: #f5f5f5;
   border-radius: 4px;
