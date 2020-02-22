@@ -22,6 +22,14 @@
       <h1>$title$</h1>
       <div class="info">$date$</div>
       <hr />
+
+      $if(draft)$
+      <div id="draftbox">
+        WARNING: This blog post is a draft. Might be incomplete, wrong or painful to read.
+      </div>
+      <hr />
+      $endif$
+
 $body$
       <hr />
       <a href="../">Back</a>

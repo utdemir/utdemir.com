@@ -38,6 +38,13 @@ a:hover {
   text-decoration: underline;
 }
 
+#draftbox {
+  text-align: center;
+  font-weight: bold;
+  background-color: #ff0000;
+  line-height: 4em;
+}
+
 a.external {
   background: url(../images/external.png) center right no-repeat;
   padding-right: 13px;
