@@ -24,6 +24,8 @@ echo "/ipfs/$final_hash"
 
 sleep 5
 
+echo "Polling IPFS gateways."
+
 gateways=(
   "https://gateway.ipfs.io"
   "https://gateway.pinata.cloud"
@@ -37,9 +39,10 @@ for gw in "${gateways[@]}"; do
   echo "Found."
 done
 
-echo "Pinning on the home server"
-ssh utdemir.com \
-  ipfs pin add --progress /ipfs/QmPxeJChsMjM6LirwAgvZf5LDEWtS9hLVo3t3SpCSKanb8
+echo "Pinning on the home server."
+trace ssh utdemir.com \
+  ipfs pin add --progress "/ipfs/$final_hash"
+sleep 1
 
 echo "Updating DNS."
 
