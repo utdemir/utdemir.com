@@ -5,7 +5,7 @@ date: 2020-03-03
 
 When processing large amounts of data, using a single computer becomes cumbersome when we start to push the limits of our network bandwidth, disk space or the processing power. Using a cluster of computers is the most common solution to this problem; but it comes with significant overhead, since a distributed application usually is much more complex than a traditional single-threaded process for the same task.
 
-[distributed-dataset][] is a Haskell library trying to overcome this problem. It hides the complexity of coordinating those machines behind a high-level list-like API, so the data transformations can be expressed almost as easily as the traditional programming model. It is inspired by [Apache Spark][].
+[distributed-dataset][] is a work-in-progress Haskell library trying to overcome this problem. It hides the complexity of coordinating those machines behind a high-level list-like API, so the data transformations can be expressed almost as easily as the traditional programming model. It is inspired by [Apache Spark][].
 
 The library is based around the `Dataset` type, which is [internally implemented](https://github.com/utdemir/distributed-dataset/blob/28addb6d8997afb35edd7fa181fec3f19227ce3f/distributed-dataset/src/Control/Distributed/Dataset/Internal/Dataset.hs#L74-L92) as a chain of transformations applied on top a partitioned data source. Those transformations are applied in a distributed fashion where the computations are shipped to the executor nodes, and each one of those executors work only on a subset of the data in parallel.
 
