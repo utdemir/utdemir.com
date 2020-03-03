@@ -1,7 +1,7 @@
 /* main layout */
 body {
   font-family: Sans-Serif;
-  background-color: white;
+  background-color: #fdfdfd;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -14,6 +14,7 @@ body {
 p {
   text-align: justify;
   text-justify: auto;
+  hyphens: auto;
 }
 
 img {
@@ -52,12 +53,12 @@ a.external {
 
 /* source codes */
 
-p code {
+:not(pre) > code {
   background-color: rgba(27,31,35,.05);
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
-  padding: .2em .4em;
+  padding: .1em .4em;
   white-space: nowrap;
 }
 
