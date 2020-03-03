@@ -1,7 +1,6 @@
 ---
 title: "[ANN] distributed-dataset: A distributed data processing framework in Haskell"
 date: 2020-03-03
-draft: true
 ---
 
 When processing large amounts of data, using a single computer becomes cumbersome when we start to push the limits of our network bandwidth, disk space or the processing power. Using a cluster of computers is the most common solution to this problem; but it comes with significant overhead, since a distributed application usually is much more complex than a traditional single-threaded process for the same task.
