@@ -12,7 +12,7 @@ function trace() {
 CF_DOMAIN="utdemir.com"
 
 # peer id of the machine hosting my website.
-trace ipfs swarm connect /ipfs/QmUhdP7YFYnBeJHXBMxgVhwLNbZ3uBW6288UJmN7Uxq7ky
+ipfs swarm connect /ipfs/QmUhdP7YFYnBeJHXBMxgVhwLNbZ3uBW6288UJmN7Uxq7ky
 
 build="$(trace nix-build --no-out-link)"
 echo "$build"
@@ -23,6 +23,11 @@ final_hash="$(echo "$all_hashes" | tail -n 1)"
 echo "/ipfs/$final_hash"
 
 sleep 5
+
+echo "Pinning on the home server."
+trace ssh utdemir.com \
+  ipfs pin add --progress "/ipfs/$final_hash"
+echo
 
 echo "Polling IPFS gateways."
 
@@ -38,11 +43,6 @@ for gw in "${gateways[@]}"; do
   while ! timeout 30s curl -s --fail "$url" >/dev/null; do sleep 5; done
   echo "Found."
 done
-
-echo "Pinning on the home server."
-trace ssh utdemir.com \
-  ipfs pin add --progress "/ipfs/$final_hash"
-echo
 
 echo "Updating DNS."
 
