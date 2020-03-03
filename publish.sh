@@ -42,7 +42,7 @@ done
 echo "Pinning on the home server."
 trace ssh utdemir.com \
   ipfs pin add --progress "/ipfs/$final_hash"
-sleep 1
+echo
 
 echo "Updating DNS."
 
