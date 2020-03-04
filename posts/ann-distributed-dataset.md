@@ -11,7 +11,7 @@ The library is based around the `Dataset` type, which is [internally implemented
 
 The transformations are defined using ordinary Haskell functions. This is achieved by the [StaticPointers][] GHC extension and the [distributed-closure][] library. Thanks to those, `distributed-dataset` can leverage the existing Haskell ecosystem, both when defining transformations and reading and writing the inputs and outputs. More specifically, it usually uses `Conduit`'s on the low-level interface; so integrating a new data source or a new kind of transformation is usually as easy as writing a `Conduit` for the purpose.
 
-`distributed-dataset` uses pluggable [Backend][]'s for actually running the computations. Backends are easy to implement; but currently the only existing backend is `distributed-dataset-aws`. This backend uses [AWS Lambda][] to run the computations and S3 to store the intermediate results. The main advantage is that it can rapidly spin up thousands of containers to run the transformations in parallel without requiring any pre-existing infrastructure.
+`distributed-dataset` uses pluggable [Backend][]'s for actually running the computations. Backends are easy to implement; but currently the only existing useful backend is `distributed-dataset-aws`. This backend uses [AWS Lambda][] to run the computations and S3 to store the intermediate results. The main advantage is that it can rapidly spin up thousands of containers to run the transformations in parallel without requiring any pre-existing infrastructure. The library also ships with `localProcessBackend` which is should only used for local development and tests.
 
 # Example
 
