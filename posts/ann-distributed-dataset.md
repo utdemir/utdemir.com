@@ -183,7 +183,7 @@ If anyone else is keen to work on this; below is a non-exhaustive list of missin
 4. Helpers for common data formats and storage systems. Currently this requires figuring out which `Conduit`'s to stich together from various Hackage libraries; we should make this easier by providing utilities for common uses.
 5. More `Backend`s; Kubernetes, YARN, Mesos, Google Cloud Run, static machines...
 
-Project is hosted at [https://github.com/utdemir/distributed-dataset](). Feel free to open [issues][] for questions, feature requests or bug reports, and [send me an email][] if you want to discuss it further.
+Project is hosted at <https://github.com/utdemir/distributed-dataset>. Feel free to open [issues][] for questions, feature requests or bug reports, and [send me an email][] if you want to discuss it further.
 
 [distributed-dataset]: https://github.com/utdemir/distributed-dataset
 [issues]: https://github.com/utdemir/distributed-dataset/issues
