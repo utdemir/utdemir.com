@@ -37,11 +37,17 @@ gateways=(
   "https://cloudflare-ipfs.com"
 )
 
-for gw in "${gateways[@]}"; do
-  url="$gw/ipfs/$final_hash/"
-  echo "Polling: $url"
-  while ! timeout 30s curl -s --fail "$url" >/dev/null; do sleep 5; done
-  echo "Found."
+
+while [ ${#gateways[@]} -ne 0 ]; do
+  for i in "${!gateways[@]}"; do
+    gw="${gateways[$i]}"
+    url="$gw/ipfs/$final_hash/"
+    if timeout 10s curl -s --fail "$url" >/dev/null; then
+      echo "Found on: $gw"
+      gateways=( "${gateways[@]:0:$i}" "${gateways[@]:$(( $i+1 ))}" )
+      break
+    fi
+  done
 done
 
 echo "Updating DNS."
