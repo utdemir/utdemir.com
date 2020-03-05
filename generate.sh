@@ -59,6 +59,7 @@ for post in "${posts[@]}"; do
         --template "templates/post.html" \
         --shift-heading-level-by 2 \
         -V "author=$AUTHOR" \
+        -V "root=.." \
     > "$post_out"
 done
 
@@ -68,8 +69,8 @@ cat index.md \
   | pandoc -f markdown -t html \
       --template "templates/index.html" \
       --metadata-file=<( echo -n "items: "; echo "${items[@]}" | jq -sc ) \
-      -M "title=''" \
       -V "author=$AUTHOR" \
+      -V "root=." \
   > "$out/index.html"
 
 echo "Writing the RSS feed."
