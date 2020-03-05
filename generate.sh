@@ -57,7 +57,7 @@ for post in "${posts[@]}"; do
         -f markdown+backtick_code_blocks+fenced_code_attributes \
         -t html \
         --template "templates/post.html" \
-        --base-header-level 3 \
+        --shift-heading-level-by 2 \
         -V "author=$AUTHOR" \
     > "$post_out"
 done
