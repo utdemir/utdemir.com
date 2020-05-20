@@ -12,5 +12,3 @@ Here are some links:
 - [me@utdemir.com](mailto:me@utdemir.com)
 - [**github**.com/utdemir](https://github.com/utdemir)
 - [**linkedin**.com/in/utdemir](https://linkedin.com/in/utdemir)
-- [**keybase**.io/utdemir](https://keybase.io/utdemir)
-
