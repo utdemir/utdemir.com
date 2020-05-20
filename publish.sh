@@ -25,7 +25,7 @@ echo "/ipfs/$final_hash"
 sleep 5
 
 echo "Pinning on the home server."
-trace ssh utdemir.com \
+trace ssh home.utdemir.com \
   ipfs pin add --progress "/ipfs/$final_hash"
 echo
 
