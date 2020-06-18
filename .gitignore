@@ -1,2 +1,5 @@
 _out
 result
+
+# Local Netlify folder
+.netlify
