@@ -4,6 +4,8 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+cd "${0%/*}"
+
 AUTHOR="Utku Demir"
 RSS_DESCRIPTION="Posts from Utku Demir's homepage"
 BASE="https://utdemir.com"
