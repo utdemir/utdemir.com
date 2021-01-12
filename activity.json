@@ -1,7 +1,7 @@
 [{
   "date": "2020-07-02",
-  "title": "nixdu: Interactively browse the dependency graph of your Nix derivations.",
-  "target": "https://github.com/utdemir/nixdu",
+  "title": "nix-tree: Interactively browse the dependency graph of your Nix derivations.",
+  "target": "https://github.com/utdemir/nix-tree",
   "type": "project"
 }, {
   "date": "2019-12-08",
