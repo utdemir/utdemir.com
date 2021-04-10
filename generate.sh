@@ -120,6 +120,14 @@ echo "Checking link validity."
 linkchecker -o csv "$out/" 2>/dev/null \
   | ( grep -v '^#' | grep -v 'urlname' || true )
 
+echo "Optimising the profile image"
+mogrify \
+  -strip \
+  -resize 1024x1024 \
+  -interlace plane \
+  -quality 80 \
+  "$out/images/profile.jpg"
+
 echo "Saving _out."
 rm -rf _out
 mv -T "$out" _out

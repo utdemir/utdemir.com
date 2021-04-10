@@ -51,6 +51,17 @@ a.external {
   padding-right: 13px;
 }
 
+#profile {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  object-position: 20% 10%;
+  border-radius: 50%;
+  float: right;
+  border: 1px solid #eeeeee;
+  margin-left: 2em;
+}
+
 /* source codes */
 
 :not(pre) > code {

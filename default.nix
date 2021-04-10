@@ -4,7 +4,10 @@ pkgs = import sources.nixpkgs {};
 in
 pkgs.stdenv.mkDerivation {
   name = "blog";
-  buildInputs = with pkgs; [ bash pandoc jq findutils rsync linkchecker ];
+  buildInputs = with pkgs; [
+    bash pandoc jq findutils rsync linkchecker
+    imagemagick
+  ];
   src = pkgs.nix-gitignore.gitignoreSource [ "publish.sh" ] ./.;
   preferLocalBuild = true;
   phases = "unpackPhase buildPhase";
