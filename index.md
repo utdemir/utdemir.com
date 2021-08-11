@@ -12,5 +12,4 @@ Here are some links:
 - [me@utdemir.com](mailto:me@utdemir.com)
 - [**github**.com/utdemir](https://github.com/utdemir)
 - [**linkedin**.com/in/utdemir](https://linkedin.com/in/utdemir)
-- [**twitter**.com/utdemir](https://twitter.com/utdemir)
-- <code>gpg \-\-keyserver ha.pool.sks-keyservers.net \-\-recv-keys [F3F8629C3E0BF60B](http://ha.pool.sks-keyservers.net/pks/lookup?op=vindex&fingerprint=on&search=0xF3F8629C3E0BF60B)</code>
+- [**keyoxide**.org/me@utdemir.com](https://keyoxide.org/me@utdemir.com)
