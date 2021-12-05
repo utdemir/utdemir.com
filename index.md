@@ -2,12 +2,13 @@
 
 I'm **Utku Demir**, a software developer from Auckland, New Zealand.
 
-I write [Haskell](https://github.com/utdemir), use [free software](https://github.com/utdemir/dotfiles) and read
-[speculative fiction](https://www.goodreads.com/utdemir).
+I try to create simple and composable code, declarative and reproducible
+infrastructure, and ethical software. Functional programming is my
+preferred tool of choice, regardless of the language.
 
 I'm currently a part of [Tweag I/O](https://www.tweag.io).
 
-Here are some links:
+Here are some links about me:
 
 - [me@utdemir.com](mailto:me@utdemir.com)
 - [**github**.com/utdemir](https://github.com/utdemir)
