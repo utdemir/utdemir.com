@@ -6,7 +6,7 @@ I try to create simple and composable code, declarative and reproducible
 infrastructure, and ethical software. Functional programming is my
 preferred tool of choice, regardless of the language.
 
-I'm currently a part of [Tweag I/O](https://www.tweag.io).
+I'm currently a part of [SoWork](https://sowork.com/).
 
 Here are some links about me:
 
