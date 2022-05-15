@@ -117,8 +117,7 @@ echo "Copying static files."
 rsync -r static/ "$out"
 
 echo "Checking link validity."
-linkchecker -o csv "$out/" 2>/dev/null \
-  | ( grep -v '^#' | grep -v 'urlname' || true )
+linklint -quiet -silent -root "$_out"
 
 echo "Optimising the profile image"
 mogrify \

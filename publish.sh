@@ -9,11 +9,11 @@ function trace() {
     $@
 }
 
-CF_DOMAIN="utdemir.com"
+S3_BUCKET="utdemir-com-src"
+CF_DISTRIBUTION="E32F9VIT9BGS79"
 
-build="$(trace nix-build --no-out-link)"
-echo "$build"
-
-netlify deploy -d "$build" --prod
+trace ./generate.sh
+trace aws s3 sync --delete _out s3://"$S3_BUCKET"
+trace aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION" --paths "/*"
 
 echo "Done."
