@@ -1,36 +1,37 @@
 [{
-  "date": "2020-07-02",
-  "title": "nix-tree: Interactively browse the dependency graph of your Nix derivations.",
-  "target": "https://github.com/utdemir/nix-tree",
-  "type": "project"
-}, {
-  "date": "2019-12-08",
-  "title": "ghc-musl: Docker image with GHC+musl for static executables",
-  "target": "https://github.com/utdemir/ghc-musl",
-  "type": "project"
-}, {
-  "date": "2019-05-14",
-  "title": "YOW! Lambda Jam 2019: Experimenting with Distributed Data Processing in Haskell",
-  "target": "https://www.youtube.com/watch?v=rcFmaOVpO8s",
-  "type": "video"
-}, {
-  "date": "2019-10-08",
-  "title": "Ormolu: Announcing First Release",
-  "target": "https://www.tweag.io/posts/2019-10-11-ormolu-first-release.html",
-  "type": "project"
-}, {
-  "date": "2019-09-25",
-  "title": "hs-nix-template: A Haskell project template with Nix",
-  "target": "https://github.com/utdemir/hs-nix-template",
-  "type": "project"
-}, {
-  "date": "2019-06-24",
-  "title": "dotfiles: Comprehensive configuration of my NixOS workstation",
-  "target": "https://github.com/utdemir/hs-nix-template",
-  "type": "project"
-}, {
-  "date": "2019-07-15",
-  "title": "emacs-with-config: A Nix function for customizing Emacs",
-  "target": "https://github.com/utdemir/emacs-with-config",
-  "type": "project"
-}]
+    "date": "2020-07-02",
+    "title": "nix-tree: Interactively browse the dependency graph of your Nix derivations.",
+    "target": "https://github.com/utdemir/nix-tree",
+    "type": "project"
+  }, {
+    "date": "2019-12-08",
+    "title": "ghc-musl: Docker image with GHC+musl for static executables",
+    "target": "https://github.com/utdemir/ghc-musl",
+    "type": "project"
+  }, {
+    "date": "2019-05-14",
+    "title": "YOW! Lambda Jam 2019: Experimenting with Distributed Data Processing in Haskell",
+    "target": "https://www.youtube.com/watch?v=rcFmaOVpO8s",
+    "type": "video"
+  }, {
+    "date": "2019-10-08",
+    "title": "Ormolu: Announcing First Release",
+    "target": "https://www.tweag.io/posts/2019-10-11-ormolu-first-release.html",
+    "type": "project"
+  }, {
+    "date": "2019-09-25",
+    "title": "hs-nix-template: A Haskell project template with Nix",
+    "target": "https://github.com/utdemir/hs-nix-template",
+    "type": "project"
+  }, {
+    "date": "2019-06-24",
+    "title": "dotfiles: Comprehensive configuration of my NixOS workstation",
+    "target": "https://github.com/utdemir/hs-nix-template",
+    "type": "project"
+  }, {
+    "date": "2019-07-15",
+    "title": "emacs-with-config: A Nix function for customizing Emacs",
+    "target": "https://github.com/utdemir/emacs-with-config",
+    "type": "project"
+  }]
+  

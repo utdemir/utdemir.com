@@ -1,3 +1,7 @@
+---
+layout: index.njk
+---
+
 # Hi,
 
 I'm **Utku Demir**, a software developer from Auckland, New Zealand.

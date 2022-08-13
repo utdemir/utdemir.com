@@ -1,6 +1,7 @@
 ---
 title: "A useful ZSH trick: zsh-sticky-prefix"
 date: 2018-10-21
+published: true
 ---
 
 Recently it started to bother me that that I spend a lot of time writing the same command many times just to give it different arguments, eg:
@@ -24,7 +25,7 @@ $ kubectl get pod somepod -o yaml
 
 Hence I wrote this really short snippet to make this faster. Here is a screencast:
 
-![zsh-sticky-prefix](../images/zsh-sticky-prefix.gif)
+![zsh-sticky-prefix](../images/zsh-sticky-prefix/zsh-sticky-prefix.gif)
 
 Just paste this to your '.zshrc' to have it:
 
