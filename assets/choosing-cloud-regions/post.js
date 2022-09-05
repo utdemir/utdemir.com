@@ -78,7 +78,7 @@ function DCRanking(props) {
                             e("td", null, 
                                 it["dcs"].sort().join(", ")
                             ),
-                            e("td", null, it["95th"]),
+                            e("td", null, it["median_latency"]),
                             e("td", null, 
                                 e("input", { 
                                     type: "radio", 
