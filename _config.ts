@@ -1,6 +1,9 @@
 import lume from "lume/mod.ts";
 import prism from "lume/plugins/prism.ts";
 import date from "lume/plugins/date.ts";
+import terser from "lume/plugins/terser.ts";
+import postcss from "lume/plugins/postcss.ts";
+import imagick from "lume/plugins/imagick.ts";
 
 const BASE_URL = "https://utdemir.com"
 
@@ -20,12 +23,26 @@ const site = lume(
 // Load plugins
 site.use(
   prism({
-    languages: ["md", "haskell", "css", "rust"],
+    languages: ["md", "haskell", "rust"],
   })
 );
 site.use(date());
+site.use(terser({
+  options: {
+    "compress": true,
+    "mangle": true,
+  }
+}));
+site.use(postcss());
 
-site.copy("static", ".");
+site.use(imagick());
+site.data("imagick", {
+  format: "webp"
+})
+
+// Per-post extra data
+
+site.copy("assets/zsh-sticky-prefix/zsh-sticky-prefix.gif")
 
 // Populate activities
 type ExternalActivity = {
