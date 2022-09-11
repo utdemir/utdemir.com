@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<img id="profile" src="images/profile.webp" alt="Utku Demir"></img>
+{{ content | safe }}
+
+<h3>Activity</h3>
+<table>
+  {% for item in null | get_activities() | sort(true, false, "date") %}
+  <tr>
+    <td>{{item.date}}</td>
+    <td>{{item.type}}</td>
+    <td>
+      <a
+        {% if(item.external) %}
+        class="external"
+        {% endif %}
+        href="{{ item.target }}"
+      >
+        {{ item.title }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 ---
 title: "[ANN] distributed-dataset: A distributed data processing framework in Haskell"
 date: 2020-03-03
+published: true
 ---
 
 When processing large amounts of data, using a single computer becomes cumbersome when we start to push the limits of our network bandwidth, disk space or processing power. Using a cluster of computers is the most common solution to this problem; but it comes with significant overhead, since a distributed application usually is much more complex than a traditional single-threaded process for the same task.
@@ -17,7 +18,8 @@ The transformations are defined using ordinary Haskell functions. This is achiev
 
 Before we dig into the details, let's walk through a small example. The code below downloads all public GitHub events from 2020 using [GH Archive][], and ranks the users based on the number of commits they pushed which contain the word "cabal" in the message. The entire code can be found (and built & ran) in the `examples/` subdirectory on the repository, but the relevant function is pasted below:
 
-```{ .haskell .numberLines }
+
+```hs
 app :: DD ()
 app =
   ghArchive (fromGregorian 2019 1 1, fromGregorian 2019 12 31)
@@ -41,7 +43,7 @@ Let's go through it step by step:
 
 ---
 
-``` { .haskell .numberLines startFrom=3 }
+```hs
 ghArchive (fromGregorian 2019 1 1, fromGregorian 2019 12 31)
 ```
 
@@ -49,7 +51,7 @@ This function is provided by a separate library called `distributed-dataset-open
 
 ---
 
-``` { .haskell .numberLines startFrom=4 }
+```hs
   & dConcatMap (static (\e ->
       let author = e ^. gheActor . ghaLogin
           commits = e ^.. gheType . _GHPushEvent
@@ -79,7 +81,7 @@ Another thing to point out is that `Dataset` is a delayed representation of the 
 
 ---
 
-``` { .haskell .numberLines startFrom=13 }
+```hs
   & dGroupedAggr 50 (static fst) dCount
   & dAggr (dTopK (static Dict) 20 (static snd))
 ```
@@ -92,13 +94,12 @@ In this snippet; using the `dGroupedAggr` function, we first apply `dCount` aggr
 
 Finally, since `dAggr` function aggregates the entire `Dataset`, it directly returns the result of an aggregation as an ordinary Haskell value. So we can just print the value in the end:
 
-``` { .haskell .numberLines startFrom=15 }
+```hs
   >>= mapM_ (liftIO . print)
 ```
 
 This example will download around 300 GB of compressed data, extract them to almost a terabyte worth of JSON, parse, aggregate and transfer the result back to us. Using `distributed-dataset-aws`, the whole process will take less than two minutes, including the time to provision and destroy the required cloud resources. Here's the result for the curious:
 
-<div style="height: 10em; overflow-y: scroll; border: solid black 1px;">
 ```
 ("bgamari",25334)
 ("ghc-mirror-bot",897)
@@ -121,7 +122,6 @@ This example will download around 300 GB of compressed data, extract them to alm
 ("newhoggy",105)
 ("vdemeester",104)
 ```
-</div>
 
 # Implementation
 
@@ -135,7 +135,7 @@ However, it requires a bit more effort when a single output row requires informa
 
 It turns out those two operations are enough to implement the `Dataset` type. Below is a slightly simplified excerpt from the library:
 
-``` { .haskell }
+```hs
 newtype Partition a
   = Partition (Closure (ConduitT () a (ResourceT IO) ()))
 

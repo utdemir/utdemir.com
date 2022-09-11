@@ -1,6 +1,7 @@
 ---
 title: "Modeling 'The Hardest Logic Puzzle Ever' in Haskell"
 date: 2015-08-22
+published: true
 ---
 
 I recently stumbled upon ["The Hardest Logic Puzzle Ever" on

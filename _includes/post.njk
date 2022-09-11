@@ -1,0 +1,21 @@
+{% extends "base.njk" %}
+{% block content %}
+
+<a href="/">Home</a>
+
+{% if not published %}
+<div id="draftbox">
+  WARNING: This blog post is a draft.
+</div>
+<hr />
+{% endif %}
+
+
+<h1>{{ title }}</h1>
+<div class="info">{{ date| date('d MMMM yyyy') }}</div>
+<hr />
+
+{{ content | safe }}
+
+<a href="/">Home</a>
+{% endblock %}

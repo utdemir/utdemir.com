@@ -1,5 +1,7 @@
-_out
-result
+_site
+_cache
 
-# Local Netlify folder
-.netlify
+.env
+.vscode
+
+.DS_store
