@@ -1,7 +1,7 @@
 ---
 title: "Choosing cloud regions for lower latency: A data-driven approach"
-date: 2022-08-20
-published: false
+date: 2022-09-12
+published: true
 ---
 
 When setting up a cloud infrastructure for a project, usually one of the first choices we have to make is which region to use. This is an important choice, as it has direct effects on feature availability, cost and latency to end-users. From those three, feature availability and cost is relatively easy to consider, however estimating the latency impact is not trivial.
@@ -100,11 +100,11 @@ At this point, we can calculate the latency maps of each AWS region, and rank th
 
 <div id="dc_ranking_one">Loading...</div>
 
-To me, it was surprising to find out that the best region for single-region setups (or the primary region for a multi-region setup) is west Europe. It still has decent coverage of North America, but on top of that it is also closer to south Asia.
+To me, it was surprising to find out that the best region for single-region setups (or the primary region for a multi-region setup) is West Europe. On top op having decent coverage of North America, it is also closer to South Asia.
 
 Another curiosity is that `us-east-1` seems to be much better than `us-east-2`. Tha latter does not even show up in the top 10 as its 95th percentile latency is 374ms. This might be an artefact of the ping dataset I am using, but requires more investigation.
 
-### Multi-region
+### Multi-region Setups
 
 AWS has [multiple][route53-latency-based-routing] [options][aws-global-accelerator] to route clients to the region that has the lowest latency to them. I do not think we have detailed publicly available information on how AWS decides on the "best region" for each client, but as they are likely to be more accurate than this article I think I can safely assume that every client can magically connect to the region that provides the lowest latency. If this assumption is correct, we can combine the individual latency maps for each region with a simple pairwise minimum operation to calculate the effect of having a multi-region setup.
 
