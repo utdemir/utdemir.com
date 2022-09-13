@@ -110,7 +110,7 @@ AWS has [multiple][route53-latency-based-routing] [options][aws-global-accelerat
 
 [aws-global-accelerator]: https://aws.amazon.com/global-accelerator/
 
-With this ability in hand, we are only left with a search problem of finding the best set of regions according to worldwide median latency.
+With this ability in hand, we are only left with a search problem of finding the best set of regions according to worldwide 95th percentile latency.
 
 Long things short, here is the result. Keep in mind that you can tweak the number of datacenters using the selectbox.
 
