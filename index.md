@@ -14,7 +14,8 @@ I'm currently a part of [SoWork](https://sowork.com/).
 
 Here are some links about me:
 
-- [me@utdemir.com](mailto:me@utdemir.com)
-- [**github**.com/utdemir](https://github.com/utdemir)
-- [**linkedin**.com/in/utdemir](https://linkedin.com/in/utdemir)
-- [**keyoxide**.org/me@utdemir.com](https://keyoxide.org/me@utdemir.com)
+
+- <a href="mailto:me@utdemir.com" rel="me">me@utdemir.com</a>
+- <a href="https://github.com/utdemir" rel="me">**github**.com/utdemir</a>
+- <a href="https://linkedin.com/in/utdemir" rel="me">**linkedin**.com/in/utdemir</a>
+- <a href="https://mastodon.nz/@utdemir" rel="me">**mastodon**.nz/@utdemir</a>
