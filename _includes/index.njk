@@ -4,12 +4,14 @@
 <img id="profile" src="images/profile.webp" alt="Utku Demir"></img>
 {{ content | safe }}
 
+{% set icons = { "video": "🎥", "post": "📄", "project": "💾"  } %}
+
 <h3>Activity</h3>
 <table>
   {% for item in null | get_activities() | sort(true, false, "date") %}
   <tr>
+    <td>{{icons[item.type]}}</td>
     <td>{{item.date}}</td>
-    <td>{{item.type}}</td>
     <td>
       <a
         {% if(item.external) %}

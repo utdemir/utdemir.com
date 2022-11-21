@@ -22,7 +22,7 @@
     "date": "2019-10-08",
     "title": "Ormolu: Announcing First Release",
     "target": "https://www.tweag.io/posts/2019-10-11-ormolu-first-release.html",
-    "type": "project"
+    "type": "post"
   }, {
     "date": "2019-09-25",
     "title": "hs-nix-template: A Haskell project template with Nix",
