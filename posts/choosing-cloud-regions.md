@@ -89,7 +89,7 @@ With the above formula, we can pick a specific location in the world, estimate i
 
 As a demonstration, here's the latency map of the world from where I grew up, Mersin (look at the blue plus sign near the centre of the map). As you can see, its connectivity to Europe and even to North America is better than parts of the Middle East, North Africa or South Asia even though they are geographically closer.
 
-![mersin-latency-map](/assets/choosing-cloud-regions/mersin_latency_map.webp)
+![mersin-latency-map](/assets/choosing-cloud-regions/mersin_latency_map.png)
 
 ## Cloud Regions
 
@@ -120,7 +120,7 @@ One trend you can easily notice is the proliferation of `ap-northeast-3` (Osaka)
 
 At this point, it's also useful to see how the number of regions affects the latency:
 
-<img style="display:block; margin-left: auto; margin-right:auto" src="/assets/choosing-cloud-regions/number_of_regions_to_latency.webp">
+<img style="display:block; margin-left: auto; margin-right:auto" src="/assets/choosing-cloud-regions/number_of_regions_to_latency.png">
 
 As you can see, we get to the point of diminishing returns very quickly. It is hard to justify a new region after about 4 or 5 regions.
 

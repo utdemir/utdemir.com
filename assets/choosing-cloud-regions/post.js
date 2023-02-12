@@ -31,7 +31,7 @@ function WorldPopulationDisplay() {
                 )
             ),
             e("div", { className: "pure-group" }, 
-                e("img", { src: ASSET_ROOT + "/" + obj.fname + ".webp" }, null),
+                e("img", { src: ASSET_ROOT + "/" + obj.fname + ".png" }, null),
             )
         ),
     );
@@ -51,7 +51,7 @@ function DCRanking(props) {
         setSelectedIx(value);
     }
 
-    const selectedSrc = ASSET_ROOT + "/lm/" + curr[selectedIx].fname + ".webp"
+    const selectedSrc = ASSET_ROOT + "/lm/" + curr[selectedIx].fname + ".png"
 
     return e("div", { className: "pure-g" },
         e("div", { className: "pure-u-1" + (props.size == 1 ? " pure-u-lg-1-3" : "") }, 

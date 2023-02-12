@@ -1,9 +1,12 @@
 import lume from "lume/mod.ts";
-import prism from "lume/plugins/prism.ts";
 import date from "lume/plugins/date.ts";
 import terser from "lume/plugins/terser.ts";
 import postcss from "lume/plugins/postcss.ts";
-import imagick from "lume/plugins/imagick.ts";
+
+import prism from "lume/plugins/prism.ts";
+import "npm:prismjs@1.29.0/components/prism-haskell.js";
+import "npm:prismjs@1.29.0/components/prism-markdown.js";
+import "npm:prismjs@1.29.0/components/prism-typescript.js";
 
 const BASE_URL = "https://utdemir.com"
 
@@ -22,9 +25,7 @@ const site = lume(
 
 // Load plugins
 site.use(
-  prism({
-    languages: ["md", "haskell", "rust"],
-  })
+  prism()
 );
 site.use(date());
 site.use(terser({
@@ -35,10 +36,8 @@ site.use(terser({
 }));
 site.use(postcss());
 
-site.use(imagick());
-site.data("imagick", {
-  format: "webp"
-})
+site.copy("images")
+site.copy("assets")
 
 // Per-post extra data
 
