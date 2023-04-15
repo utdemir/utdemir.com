@@ -14,7 +14,6 @@ I'm currently a part of [SoWork](https://sowork.com/).
 
 Here are some links about me:
 
-
 - <a href="mailto:me@utdemir.com" rel="me">me@utdemir.com</a>
 - <a href="https://github.com/utdemir" rel="me">**github**.com/utdemir</a>
 - <a href="https://linkedin.com/in/utdemir" rel="me">**linkedin**.com/in/utdemir</a>

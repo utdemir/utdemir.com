@@ -1,12 +1,14 @@
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
 import terser from "lume/plugins/terser.ts";
-import postcss from "lume/plugins/postcss.ts";
+import inline from "lume/plugins/inline.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
+import sitemap from "lume/plugins/sitemap.ts";
 
 import prism from "lume/plugins/prism.ts";
-import "npm:prismjs@1.29.0/components/prism-haskell.js";
-import "npm:prismjs@1.29.0/components/prism-markdown.js";
-import "npm:prismjs@1.29.0/components/prism-typescript.js";
+import "prism/components/prism-haskell.js";
+import "prism/components/prism-markdown.js";
+import "prism/components/prism-typescript.js";
 
 const BASE_URL = "https://utdemir.com"
 
@@ -24,9 +26,7 @@ const site = lume(
 );
 
 // Load plugins
-site.use(
-  prism()
-);
+site.use(prism());
 site.use(date());
 site.use(terser({
   options: {
@@ -34,10 +34,14 @@ site.use(terser({
     "mangle": true,
   }
 }));
-site.use(postcss());
+site.use(minifyHTML());
+site.use(inline());
+site.use(sitemap());
 
 site.copy("images")
 site.copy("assets")
+
+site.copy("favicon.ico")
 
 // Per-post extra data
 

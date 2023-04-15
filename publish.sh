@@ -4,8 +4,8 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-S3_BUCKET="utdemir-com-src"
-CF_DISTRIBUTION="E32F9VIT9BGS79"
+S3_BUCKET="utdemir.com"
+CF_DISTRIBUTION="E2E0WU3CQGEOIX"
 
 set -o xtrace
 

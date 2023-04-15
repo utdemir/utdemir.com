@@ -1,16 +1,20 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<img id="profile" src="images/profile.jpg" alt="Utku Demir"></img>
+<img id="profile" src="images/profile.webp" alt="Utku Demir"></img>
 {{ content | safe }}
 
-{% set icons = { "video": "🎥", "post": "📄", "project": "💾"  } %}
+{% set icons = { 
+  "video": "youtube.png",
+  "post": "blog.jpg",
+  "project": "github.svg" 
+} %}
 
 <h3>Activity</h3>
 <table>
   {% for item in null | get_activities() | sort(true, false, "date") %}
   <tr>
-    <td>{{icons[item.type]}}</td>
+    <td><img class="activity-favicon" src="images/{{icons[item.type]}}"/></td>
     <td>{{item.date}}</td>
     <td>
       <a

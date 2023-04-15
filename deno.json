@@ -6,6 +6,7 @@
   },
   "imports": {
     "lume/": "https://deno.land/x/lume@v1.15.2/",
-    "dayjs/": "https://deno.land/x/dayjs@v1.11.5/"
+    "dayjs/": "https://deno.land/x/dayjs@v1.11.5/",
+    "prism/": "npm:/prismjs@1.29.0/"
   }
 }

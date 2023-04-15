@@ -58,6 +58,12 @@ a.external {
   padding-right: 13px;
 }
 
+img.activity-favicon {
+  width: 1em;
+  filter: saturate(80%);
+  vertical-align: text-top;
+}
+
 :not(pre) > code {
   background-color: rgba(27,31,35,.05);
   border-radius: 3px;
