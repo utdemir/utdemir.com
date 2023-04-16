@@ -23,6 +23,15 @@ body {
   margin-left: 2em;
 }
 
+.activities {
+  display: flex;
+  align-items: center;
+}
+
+.activities > div {
+  margin-bottom: 0.5em;
+}
+
 /* main layout */
 
 p {

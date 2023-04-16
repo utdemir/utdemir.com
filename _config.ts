@@ -5,6 +5,8 @@ import inline from "lume/plugins/inline.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 
+import dayjs from "npm:dayjs";
+
 import prism from "lume/plugins/prism.ts";
 import "prism/components/prism-haskell.js";
 import "prism/components/prism-markdown.js";
@@ -37,6 +39,8 @@ site.use(terser({
 site.use(minifyHTML());
 site.use(inline());
 site.use(sitemap());
+
+// Assets
 
 site.copy("images")
 site.copy("assets")
@@ -75,12 +79,12 @@ function get_activities() {
     if(page.src.path.startsWith("/posts") && page.data.published) {
         const date = page.data.date as Date;
         const ret = {
-            date: date.toISOString().slice(0, "YYYY-MM-DD".length),
+            date: dayjs(date).format("MMM 'YY"),
             title: page.data.title as string,
             target: page.data.url as string,
             target_absolute: BASE_URL + page.data.url as string,
             type: "post",
-            rfc822_date: date.toUTCString(),
+            rfc822_date: date.toISOString(),
             external: false,
         };
         activities.push(ret);
@@ -91,7 +95,8 @@ function get_activities() {
         ...it,
         target_absolute: it.target,
         external: true,
-        rfc822_date: new Date(it.date).toUTCString(),
+        date: dayjs(it.date).format("MMM 'YY"),
+        rfc822_date: new Date(it.date).toISOString(),
     }
     activities.push(ret)
   }

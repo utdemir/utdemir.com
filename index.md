@@ -12,7 +12,7 @@ preferred tool of choice, regardless of the language.
 
 I'm currently a part of [SoWork](https://sowork.com/).
 
-Here are some links about me:
+Here are a few ways to get in touch:
 
 - <a href="mailto:me@utdemir.com" rel="me">me@utdemir.com</a>
 - <a href="https://github.com/utdemir" rel="me">**github**.com/utdemir</a>
