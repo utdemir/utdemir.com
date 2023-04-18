@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="/css/pure-grids-responsive-min.css" inline />
     <link rel="stylesheet" type="text/css" href="/css/default.css" inline />
     <link rel="stylesheet" type="text/css" href="/css/syntax.css" inline />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/images/blog.svg" type="image/svg" />
+    <link rel="shortcut icon" href="/images/favicon.webp" type="image/svg" />
+    {% if description %}
+      <meta name="description" content="{{ description | escape }}" />
+    {% endif %}
     <link
       rel="alternate"
       type="application/rss+xml"

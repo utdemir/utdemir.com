@@ -14,7 +14,7 @@
 {% for item in null | get_activities() | sort(true, false, "rfc822_date") %}
 <div class="pure-g activities">
   <div class="pure-u-3-24 pure-u-sm-1-24">
-    <img class="activity-favicon pure-img" src="images/{{icons[item.type]}}"/>
+    <img class="activity-favicon pure-img" alt="{{item.type}} icon" src="images/{{icons[item.type]}}"/>
   </div>
   <div class="pure-u-3-24 pure-u-sm-2-24">{{item.date}}</div>
   <div class="pure-u-18-24 pure-u-sm-21-24">
